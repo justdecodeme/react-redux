@@ -1,48 +1,39 @@
 .App {
-  main {
-    background-color: rgb(236, 236, 236);
-    min-height: calc(100vh - 125px);
-    padding: 20px 30px;
-  }
-}
-
-.Header, .Footer {
-  background-color: #ccc;
-  padding: 20px 30px;
-}
-
-.Header {
-  a {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    ul {
-      display: flex;
-      li {
-        margin-left: 20px;
-        &:last-child {
-          border-left: 1px solid #a5a5a5;
-          padding-left: 20px;
-        }
-      }
-    }
-  }
-}
-
-.Footer {
   text-align: center;
 }
 
-.Home, .Login {
-  width: 400px;
-  margin: 50px auto;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.Login {
-  text-align: center;
-  input {
-    width: 100%;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px)
+  }
+  100% {
+    transform: translateY(0px)
   }
 }
