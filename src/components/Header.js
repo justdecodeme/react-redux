@@ -1,26 +1,24 @@
-import { useContext } from "react";
+import { useContext } from "react"
 
-import AuthContext from "../contexts/auth-context";
+import AuthContext from "../contexts/auth-context"
 
 function Header() {
-  const { user, logout } = useContext(AuthContext);
+  const auth = useContext(AuthContext)
 
-  return (
-    <header className="Header">
-      <nav>
-        <h4>React - Context API</h4>
+  return <div className="Header">
+    <nav>
+      <h4>React - Context API</h4>
+      {auth.user &&
         <ul>
-          {
-            user &&
-            <>
-              <li><a href="#">Hi, {user}</a></li>
-              <li><a href="#" onClick={logout}>Logout</a></li>
-            </>
-          }
+          <li><a href="#">Hi, {auth.user}</a></li>
+          {/* <li><a href="#" onClick={() => auth.logout()}>Logout</a></li> */}
+          <li><a href="#" onClick={auth.logout}>Logout</a></li>
         </ul>
-      </nav>
-    </header>
-  );
+      }
+    </nav>
+  </div>
 }
 
 export default Header;
+
+// if (2 == 4 && 3 == 2) // false

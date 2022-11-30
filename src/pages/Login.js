@@ -1,15 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext, useState } from "react"
 
-import AuthContext from "../contexts/auth-context";
+import AuthContext from "../contexts/auth-context"
 
 function Login() {
-  const { login } = useContext(AuthContext);
-
+  const auth = useContext(AuthContext)
   const [form, setForm] = useState({ username: '', password: '' })
 
-  const handleChange = (key, value) => {
-    setForm({ ...form, [key]: value })
-  }
+  const handleChange = (key, value) => setForm({ ...form, [key]: value })
 
   return <form className="Login">
     <input type="text" onChange={(e) => handleChange('username', e.target.value)} />
@@ -17,11 +14,12 @@ function Login() {
     <input type="password" onChange={(e) => handleChange('password', e.target.value)} />
     <br />
     <button
-      onClick={() => login(form.username)}
-      disabled={form.username === '' && form.password === ''}>
+      disabled={form.username === '' || form.password === ''}
+      onClick={() => auth.login(form.username)}
+    >
       Login
     </button>
-  </form>;
+  </form>
 }
 
 export default Login;
