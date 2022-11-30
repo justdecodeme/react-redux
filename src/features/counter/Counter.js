@@ -4,7 +4,6 @@ import {
   decrement,
   increment,
   incrementByAmount,
-  incrementAsync,
   selectCount,
 } from './counterSlice';
 import './Counter.css';
