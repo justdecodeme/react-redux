@@ -1,9 +1,13 @@
 import { useContext, useState } from "react"
 
-import AuthContext from "../contexts/auth-context"
+// import AuthContext from "../contexts/auth-context"
+// import { useSelector, useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 
 function Login() {
-  const auth = useContext(AuthContext)
+  // const auth = useContext(AuthContext)
+  // const auth = useSelector(auth)
+  // const dispatch = useDispatch()
   const [form, setForm] = useState({ username: '', password: '' })
 
   const handleChange = (key, value) => setForm({ ...form, [key]: value })
@@ -15,7 +19,8 @@ function Login() {
     <br />
     <button
       disabled={form.username === '' || form.password === ''}
-      onClick={() => auth.login(form.username)}
+    // onClick={() => auth.login(form.username)}
+    // onClick={() => dispatch(login())}
     >
       Login
     </button>
